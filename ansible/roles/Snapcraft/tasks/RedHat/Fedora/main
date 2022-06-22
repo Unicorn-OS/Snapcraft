@@ -1,7 +1,8 @@
 ---
 - name: Enable snapd
   ansible.builtin.dnf:
-    name: snapd
+    name:
+      - snapd
     state: latest
   become: true
 
