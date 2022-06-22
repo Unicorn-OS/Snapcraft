@@ -1,0 +1,21 @@
+---
+- name: Enable snapd
+  ansible.builtin.dnf:
+    name: snapd
+    state: latest
+  become: true
+
+- name: Enable classic snap support
+  ansible.builtin.file:
+    src: /var/lib/snapd/snap
+    dest: /snap
+    state: link
+  become: true
+
+- name: Install snapcraft
+  snap:
+    name: snapcraft
+    classic: yes
+  become: true
+
+# https://snapcraft.io/install/snapcraft/fedora
