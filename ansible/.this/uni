@@ -4,3 +4,4 @@
 
   roles:
   - role: Snapcraft
+#  - role: Snap Store

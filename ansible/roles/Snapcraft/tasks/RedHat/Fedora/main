@@ -13,10 +13,4 @@
     state: link
   become: true
 
-- name: Install snapcraft
-  snap:
-    name: snapcraft
-    classic: yes
-  become: true
-
 # https://snapcraft.io/install/snapcraft/fedora
