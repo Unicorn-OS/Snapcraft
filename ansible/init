@@ -18,14 +18,15 @@ link_template(){
   ln -srf uni ..
 }
 
-isInThis(){
+inDirectory(){
   echo use to fix runtime directory location
-  #cd $this
+  cd .this
+  #$this
 }
 
 
 main(){
-  isInThis
+  inDirectory
   copy_template
 #  future_set_host
   set_user
