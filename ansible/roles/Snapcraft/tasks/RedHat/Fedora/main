@@ -6,9 +6,7 @@
     state: latest
   become: true
   notify:
-    - reboot os
-    - manual reboot
-  # Reboot required for Fedora
+    - wait for seeding
 
 - name: Enable classic snap support
   ansible.builtin.file:
