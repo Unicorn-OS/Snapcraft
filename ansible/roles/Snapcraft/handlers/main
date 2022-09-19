@@ -1,0 +1,5 @@
+---
+- name: reboot os
+  ansible.builtin.reboot:
+  become: true
+# Reboot required for Fedora

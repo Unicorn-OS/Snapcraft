@@ -5,6 +5,8 @@
       - snapd
     state: latest
   become: true
+  notify: reboot os
+  # Reboot required for Fedora
 
 - name: Enable classic snap support
   ansible.builtin.file:
