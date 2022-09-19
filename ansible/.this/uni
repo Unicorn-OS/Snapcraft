@@ -1,7 +1,0 @@
----
-- hosts: node
-  gather_facts: yes
-
-  roles:
-  - role: Snapcraft
-#  - role: Snap Store

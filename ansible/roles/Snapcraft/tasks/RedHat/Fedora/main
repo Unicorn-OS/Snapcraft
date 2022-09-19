@@ -5,7 +5,9 @@
       - snapd
     state: latest
   become: true
-  notify: reboot os
+  notify:
+    - reboot os
+    - manual reboot
   # Reboot required for Fedora
 
 - name: Enable classic snap support

@@ -2,4 +2,10 @@
 - name: reboot os
   ansible.builtin.reboot:
   become: true
+  when: ansible_connection != local
+
+- name: manual reboot
+  dbg:
+    msg: "This is a local connection! cannot be rebooted by ansible. Reboot manually to finish Snapcraft install"
+  when: ansible_connection == local
 # Reboot required for Fedora
