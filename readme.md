@@ -1,1 +1,3 @@
-# app.Snapcraft
+# Snapcraft
+
+Add Snapcraft app sources to any distro!
