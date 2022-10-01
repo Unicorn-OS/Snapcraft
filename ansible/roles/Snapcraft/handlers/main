@@ -4,3 +4,12 @@
   ansible.builtin.systemd:
     state: started
     name: snapd.seeded
+
+# This is a Hack needs replaced! It should dynamically monitor the "systemctl status snapd.seeded.service" until ready. 
+- name: Wait until seeding ready
+  ansible.builtin.wait_for:
+    timeout: "{{ seconds_to_wait_for_seeding }}"
+  delegate_to: localhost
+
+- name: is snapd.seeded.service done
+  command: wait until systemctl status snapd.seeded.service

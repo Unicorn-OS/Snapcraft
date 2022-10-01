@@ -7,6 +7,8 @@
   become: true
   notify:
     - Start seeding service
+    - Wait until seeding ready
+# This is a Hack needs replaced! It should dynamically monitor the "systemctl status snapd.seeded.service" until ready.
 
 - name: Enable classic snap support
   ansible.builtin.file:
