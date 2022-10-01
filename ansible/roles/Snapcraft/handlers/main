@@ -1,5 +1,6 @@
 ---
 - name: Start seeding service
+  become: true
   ansible.builtin.systemd:
     state: started
-    name: httpd
+    name: snapd.seeded
