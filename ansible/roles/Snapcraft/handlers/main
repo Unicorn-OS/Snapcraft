@@ -1,0 +1,5 @@
+---
+- name: Start seeding service
+  ansible.builtin.systemd:
+    state: started
+    name: httpd

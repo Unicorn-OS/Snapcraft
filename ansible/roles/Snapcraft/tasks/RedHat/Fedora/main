@@ -6,7 +6,7 @@
     state: latest
   become: true
   notify:
-    - wait for seeding
+    - Start seeding service
 
 - name: Enable classic snap support
   ansible.builtin.file:
