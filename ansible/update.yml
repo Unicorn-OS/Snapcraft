@@ -1,0 +1,14 @@
+---
+- name: Update roles to newer OS Distro versions
+  hosts: local
+  vars:
+    role_name: "Snapcraft"
+
+  tasks:
+  - name: Create a symbolic link, to update role
+    ansible.builtin.file:
+      src: "{{playbook_dir}}/roles/{{role_name}}/tasks/{{ansible_facts.os_family}}/{{ansible_facts.distribution}}/main"
+      dest: "{{playbook_dir}}/roles/{{role_name}}/tasks/{{ansible_facts.os_family}}/{{ansible_facts.distribution}}/{{ansible_facts.distribution_major_version}}"
+      owner: "{{ansible_user}}"
+      group: "{{ansible_user}}"
+      state: link
