@@ -10,6 +10,11 @@
     - Wait until seeding ready
 # This is a Hack needs replaced! It should dynamically monitor the "systemctl status snapd.seeded.service" until ready.
 
+### Try
+# - name: is snapd.seeded.service done
+#   command: wait until systemctl status snapd.seeded.service
+### Try
+
 - name: Enable classic snap support
   ansible.builtin.file:
     src: /var/lib/snapd/snap
