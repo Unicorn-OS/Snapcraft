@@ -1,0 +1,13 @@
+# https://snapcraft.io/docs/installing-snap-on-debian
+
+- name: Install Snapcraft
+  ansible.builtin.apt:
+    pkg:
+    - snapd
+  become: true
+  notify:
+  - Reconnect
+  - Snap install core
+
+- name: Reconnect & install core if new Install
+  ansible.builtin.meta: flush_handlers

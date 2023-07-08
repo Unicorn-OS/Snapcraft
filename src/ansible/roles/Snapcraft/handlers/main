@@ -10,3 +10,12 @@
   ansible.builtin.wait_for:
     timeout: "{{ seconds_to_wait_for_seeding }}"
   delegate_to: localhost
+
+- name: Reconnect
+  ansible.builtin.meta: reset_connection
+
+- name: Snap install core
+  community.general.snap:
+    name:
+      - core
+  become: true
