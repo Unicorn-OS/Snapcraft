@@ -1,0 +1,7 @@
+- name: Is installed?
+  ansible.builtin.shell: which snap
+  register: which
+  failed_when: false
+
+- debug:
+    msg: "Snapcraft Installed: {{'True' if not which.rc else 'False'}}
