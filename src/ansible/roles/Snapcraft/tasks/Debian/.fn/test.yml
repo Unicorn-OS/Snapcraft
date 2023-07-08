@@ -4,4 +4,4 @@
   failed_when: false
 
 - debug:
-    msg: "Snapcraft Installed: {{'True' if not which.rc else 'False'}}
+    msg: "Snapcraft Installed: {{'True' if not which.rc else 'False'}}"
